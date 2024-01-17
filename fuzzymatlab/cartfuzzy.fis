@@ -1,0 +1,30 @@
+[System]
+Name='cartfuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='theta'
+Range=[-3.14159265358979 3.14159265358979]
+NumMFs=2
+MF1='negative':'zmf',[-0.5 0.5]
+MF2='positive':'smf',[-0.5 0.5]
+
+[Output1]
+Name='force'
+Range=[-20 20]
+NumMFs=2
+MF1='NM':'gbellmf',[5 2 -12]
+MF2='PM':'gbellmf',[5 2 12]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
